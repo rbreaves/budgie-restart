@@ -5,7 +5,7 @@
 
 APPLETDIR=/usr/lib/budgie-desktop/plugins
 
-ICONDIR=/usr/share/icons/hicolor/scalable/apps
+ICONDIR=/usr/share/pixmaps
 
 PROJECT_NAME='org.budgie-desktop.applet.budgierestart'
 
