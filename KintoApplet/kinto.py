@@ -201,26 +201,11 @@ class KintoApplet(Budgie.Applet):
 
 				setwinmac = ['s/^(\s{3})(\s{1}#)(.*# WinMac\n|.*# WinMac -)|^(?!\s{4}#)(\s{3})(\s{1})(.*)( # )(Mac\n|Mac -)/   $3$7$6$7$8/g']
 
-				# # Comment out Mac
-				# unset1 = ['perl','-pi','-e','s/^(?!\s{4}#)(\s{4})(.*# Mac\n)/    # $2/g',kconfig]
-				# unset2 = ['perl','-pi','-e','s/^(?!\s{4}#)(\s{4})(.*# Mac - Multi-language \(Remove\)\n)/    # $2/g',kconfig]
-
-				# # Enable WinMac
-				# reset1 = ['perl','-pi','-e','s/(\s{4}# )(.*# WinMac - Multi-language \(Remove\)\n)/    $2/g',kconfig]
-				# reset2 = ['perl','-pi','-e','s/(\s{4}# )(.*# WinMac\n)/    $2/g',kconfig]
 			else:
 				label = "Set Win/Mac KB Type"
 				connect = "winmac"
 
 				setwinmac = ['s/^(\s{3})(\s{1}#)(.*# Mac\n|.*# Mac -)|^(?!\s{4}#)(\s{3})(\s{1})(.*)( # )(WinMac)/   $3$7$6$7$8/g']
-
-				# # Comment out WinMac
-				# unset1 = ['perl','-pi','-e','s/^(?!\s{4}#)(\s{4})(.*# WinMac\n)/    # $2/g',kconfig]
-				# unset2 = ['perl','-pi','-e','s/^(?!\s{4}#)(\s{4})(.*# WinMac - Multi-language \(Remove\)\n)/    # $2/g',kconfig]
-
-				# # Enable Mac
-				# reset1 = ['perl','-pi','-e','s/(\s{4}# )(.*# Mac - Multi-language \(Remove\)\n)/    $2/g',kconfig]
-				# reset2 = ['perl','-pi','-e','s/(\s{4}# )(.*# Mac\n)/    $2/g',kconfig]
 
 			restart = ['nohup','sudo', 'systemctl','restart','xkeysnail']
 			cmds = ['perl','-pi','-e']+setwinmac+[kconfig]
